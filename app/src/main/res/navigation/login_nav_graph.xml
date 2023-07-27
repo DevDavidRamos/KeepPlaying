@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.keepplaying.presentation.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+
+        <action
+            android:id="@+id/action_loginFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_passwordRecoveryFragment"
+            app:destination="@id/passwordRecoveryFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_menuMainActivity"
+            app:destination="@id/menuMainActivity">
+            <argument
+                android:name="uid"
+                app:nullable="false"
+                app:argType="string" />
+            <argument
+                android:name="nombre"
+                app:nullable="false"
+                app:argType="string" />
+            <argument
+                android:name="apellido"
+                app:nullable="false"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/passwordRecoveryFragment"
+        android:name="com.example.keepplaying.presentation.password_recovery.PasswordRecoveryFragment"
+        android:label="fragment_password_recovery"
+        tools:layout="@layout/fragment_password_recovery" />
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.example.keepplaying.presentation.signup.CreateAccountFragment"
+        android:label="fragment_create_account"
+        tools:layout="@layout/fragment_create_account" />
+    <activity
+        android:id="@+id/menuMainActivity"
+        android:name="com.example.keepplaying.firebase.MenuMainActivity"
+        android:label="activity_menu_main"
+        tools:layout="@layout/activity_menu_main" >
+
+    </activity>
+
+
+</navigation>
