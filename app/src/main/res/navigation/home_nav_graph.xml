@@ -23,9 +23,32 @@
             android:name="apellido"
             app:nullable="false"
             app:argType="string"/>
-
+        <action
+            android:id="@+id/action_homeFragment_to_nintendoFragment"
+            app:destination="@id/nintendoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_xboxFragment"
+            app:destination="@id/xboxFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_playstationFragment"
+            app:destination="@id/playstationFragment" />
 
 
     </fragment>
+    <fragment
+        android:id="@+id/playstationFragment"
+        android:name="com.example.keepplaying.presentation.home_menu.card_zone.playstation.PlaystationFragment"
+        android:label="fragment_playstation"
+        tools:layout="@layout/fragment_playstation" />
+    <fragment
+        android:id="@+id/xboxFragment"
+        android:name="com.example.keepplaying.presentation.home_menu.card_zone.xbox.XboxFragment"
+        android:label="fragment_xbox"
+        tools:layout="@layout/fragment_xbox" />
+    <fragment
+        android:id="@+id/nintendoFragment"
+        android:name="com.example.keepplaying.presentation.home_menu.card_zone.nintendo.NintendoFragment"
+        android:label="fragment_nintendo"
+        tools:layout="@layout/fragment_nintendo" />
 
 </navigation>

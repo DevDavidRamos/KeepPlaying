@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="verde">#04FF4A</color>
     <color name="blu">#0029FF</color>
+    <color name="xbox_green">#107C10</color>
+    <color name="switch_red">#E60012</color>
 </resources>
