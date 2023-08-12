@@ -1,4 +1,4 @@
-package com.example.keepplaying.firebase.data.local
+package com.example.keepplaying.firebase.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -12,7 +12,8 @@ data class ProductEntity(
     val name: String = "",
     val brand: String = "",
     val price: Int = INVALID_PRICE,
-    val image: String = ""
+    val image: String = "",
+    val isFavorite: Boolean = false
 )
 
 fun ProductEntity.mapToProduct(): Product {
@@ -21,7 +22,8 @@ fun ProductEntity.mapToProduct(): Product {
         name = name,
         brand = brand,
         price = price,
-        image = image
+        image = image,
+        isFavorite = isFavorite
     )
 }
 

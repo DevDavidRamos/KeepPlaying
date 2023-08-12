@@ -2,9 +2,13 @@ package com.example.keepplaying.firebase.di
 
 import com.example.keepplaying.firebase.data.remote.FirebaseAuthRepositoryImpl
 import com.example.keepplaying.firebase.data.remote.FirestoreUserRepositoryImpl
+import com.example.keepplaying.firebase.data.repository.FavoritesRepositoryImpl
 import com.example.keepplaying.firebase.data.repository.ProductRepositoryImpl
+import com.example.keepplaying.firebase.data.repository.RecentSearchRepositoryImpl
 import com.example.keepplaying.firebase.domain.repository.AuthRepository
+import com.example.keepplaying.firebase.domain.repository.FavoritesRepository
 import com.example.keepplaying.firebase.domain.repository.ProductRepository
+import com.example.keepplaying.firebase.domain.repository.RecentSearchRepository
 import com.example.keepplaying.firebase.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
@@ -25,5 +29,9 @@ abstract class RepositoryModule {
     @Binds
     abstract fun bindProductsRepository(productsRepository: ProductRepositoryImpl): ProductRepository
 
+    @Binds
+    abstract fun bindRecentSearchRepository(recentSearchRepository: RecentSearchRepositoryImpl): RecentSearchRepository
 
+    @Binds
+    abstract fun bindFavoritesRepository(favoritesRepository: FavoritesRepositoryImpl): FavoritesRepository
 }

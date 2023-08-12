@@ -27,4 +27,12 @@ object RoomModule {
     @Singleton
     fun provideProductsDao(db: EcommerceDatabase) = db.productsDao()
 
+    @Provides
+    @Singleton
+    fun provideRecentSearchDao(db: EcommerceDatabase) = db.recentSearchDao()
+
+    @Provides
+    @Singleton
+    fun provideFavoritesDao(db: EcommerceDatabase) = db.favoritesDao()
+
 }

@@ -1,27 +1,29 @@
 package com.example.keepplaying.firebase.domain.model
 
-import com.example.keepplaying.firebase.data.local.ProductEntity
+import com.example.keepplaying.firebase.data.local.entity.ProductEntity
 
 const val INVALID_PRICE = -1
 
 data class Product(
-    val id: String? = null,
+    val id: String = "",
     val name: String = "",
     val brand: String = "",
     val price: Int = INVALID_PRICE,
-    val image: String = ""
+    val image: String = "",
+    val isFavorite: Boolean = false
 )
 
-fun Product.mapToProductEntity(): ProductEntity {
+fun Product.mapToProductEntity(favorites: List<String>): ProductEntity {
     return ProductEntity(
         id = id.orEmpty(),
         name = name,
         brand = brand,
         price = price,
-        image = image
+        image = image,
+        isFavorite = favorites.contains(id)
     )
 }
 
-fun List<Product>.mapToProductEntityList(): List<ProductEntity> {
-    return this.map { it.mapToProductEntity() }
+fun List<Product>.mapToProductEntityList(favorites: List<String>): List<ProductEntity> {
+    return this.map { it.mapToProductEntity(favorites) }
 }
