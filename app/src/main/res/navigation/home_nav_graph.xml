@@ -25,13 +25,25 @@
             app:argType="string"/>
         <action
             android:id="@+id/action_homeFragment_to_nintendoFragment"
-            app:destination="@id/nintendoFragment" />
+            app:destination="@id/nintendoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_homeFragment_to_xboxFragment"
-            app:destination="@id/xboxFragment" />
+            app:destination="@id/xboxFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_homeFragment_to_playstationFragment"
-            app:destination="@id/playstationFragment" />
+            app:destination="@id/playstationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
 
 
     </fragment>
@@ -39,16 +51,31 @@
         android:id="@+id/playstationFragment"
         android:name="com.example.keepplaying.presentation.home_menu.card_zone.playstation.PlaystationFragment"
         android:label="fragment_playstation"
-        tools:layout="@layout/fragment_playstation" />
+        tools:layout="@layout/fragment_playstation">
+    <argument
+        android:name="nameQuery"
+        app:argType="string"
+        app:nullable="false"/>
+    </fragment>
     <fragment
         android:id="@+id/xboxFragment"
         android:name="com.example.keepplaying.presentation.home_menu.card_zone.xbox.XboxFragment"
         android:label="fragment_xbox"
-        tools:layout="@layout/fragment_xbox" />
+        tools:layout="@layout/fragment_xbox">
+        <argument
+            android:name="nameQuery"
+            app:argType="string"
+            app:nullable="false"/>
+    </fragment>
     <fragment
         android:id="@+id/nintendoFragment"
         android:name="com.example.keepplaying.presentation.home_menu.card_zone.nintendo.NintendoFragment"
         android:label="fragment_nintendo"
-        tools:layout="@layout/fragment_nintendo" />
+        tools:layout="@layout/fragment_nintendo" >
+    <argument
+        android:name="nameQuery"
+        app:argType="string"
+        app:nullable="false"/>
+    </fragment>
 
 </navigation>

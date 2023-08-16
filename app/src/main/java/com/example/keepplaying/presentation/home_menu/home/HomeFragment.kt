@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.keepplaying.R
 import com.example.keepplaying.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -35,13 +37,16 @@ class HomeFragment : Fragment() {
     private fun initListener() {
 
         binding.ibtnPsn.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_playstationFragment)
+            val action = HomeFragmentDirections.actionHomeFragmentToPlaystationFragment(nameQuery = "playstation")
+            findNavController().navigate(action)
         }
         binding.ibtnXbox.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_xboxFragment)
+            val action = HomeFragmentDirections.actionHomeFragmentToXboxFragment(nameQuery = "xbox")
+            findNavController().navigate(action)
         }
         binding.ibtnNintendo.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_nintendoFragment)
+            val action = HomeFragmentDirections.actionHomeFragmentToNintendoFragment(nameQuery = "nintendo")
+            findNavController().navigate(action)
         }
     }
     override fun onDestroyView() {
